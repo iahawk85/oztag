@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { GameState, Player, Position } from '../types';
 
 const GameContext = createContext<GameState | undefined>(undefined);
@@ -38,9 +38,9 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     ));
   };
 
-  const movePlayer = (id: string, toField: boolean) => {
+  const movePlayer = (id: string, toField: boolean): boolean => {
     const player = players.find(p => p.id === id);
-    if (!player) return;
+    if (!player) return false;
 
     if (toField) {
       const playersInPosition = players.filter(

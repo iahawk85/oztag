@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDraggable } from '@dnd-kit/core';
 import { Player } from '../types';
 import { useGame } from '../context/GameContext';

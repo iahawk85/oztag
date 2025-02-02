@@ -1,11 +1,10 @@
-import React from 'react';
 import { DndContext, DragEndEvent } from '@dnd-kit/core';
 import { AddPlayerForm } from './components/AddPlayerForm';
 import { Field } from './components/Field';
 import { Bench } from './components/Bench';
 import { useGame } from './context/GameContext';
 
-function App() {
+export function App() {
   const { movePlayer } = useGame();
 
   const handleDragEnd = (event: DragEndEvent) => {
@@ -38,5 +37,3 @@ function App() {
     </DndContext>
   );
 }
-
-export default App;
